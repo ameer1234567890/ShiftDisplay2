@@ -16,36 +16,28 @@ Arduino library for driving 7-segment displays using shift registers
 - Concatenate multiple displays as one
 - Only 3 pins used on Arduino
 
-![breadboard](extras/foobar.jpg)
-
+![breadboard](https://raw.githubusercontent.com/ameer1234567890/ShiftDisplay2/master/extras/foobar.jpg)
 
 ## Hardware
-
 - 1x (or more) 7-segment LED display
 - 2x shift register (eg: 74HC595, TPIC6B595)
 - 2x 0.1uF ceramic capacitor
 - 8x (per display) 220 Ohm resistor
 
-
 ## Wiring
-
 1. Connect Arduino board to shift registers:
-![input](extras/input.png)
+![input](https://raw.githubusercontent.com/ameer1234567890/ShiftDisplay2/master/extras/input.png)
 
 2. Connect shift registers to display(s):
-![output](extras/output.png)
-
+![output](https://raw.githubusercontent.com/ameer1234567890/ShiftDisplay2/master/extras/output.png)
 
 ## Install
-
 1. Launch the Arduino IDE
 1. Open the Library Manager by going to menu: Sketch > Include Library > Manage Libraries
 2. Search for ShiftDisplay2 library by typing shiftdisplay2 in Filter your search
 3. Select ShiftDisplay2 by Ameer Dawood and click install
 
-
 ## Example
-
 ```c
 #include <ShiftDisplay2.h>
 
@@ -68,19 +60,18 @@ void loop() {
 }
 ```
 
-
 ## Reference
 
 ### Constructors
 
 * __ShiftDisplay2()__
 
-  * ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, displaySize[, displayDrive])
-  * ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, sectionSizes[, displayDrive])
-  * ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, displaySize, swappedShiftRegisters[, indexes])
-  * ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, sectionSizes, swappedShiftRegisters[, indexes])
+  * `ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, displaySize[, displayDrive])`
+  * `ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, sectionSizes[, displayDrive])`
+  * `ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, displaySize, swappedShiftRegisters[, indexes])`
+  * `ShiftDisplay2 display([latchPin, clockPin, dataPin, ]displayType, sectionSizes, swappedShiftRegisters[, indexes])`
 
-  Create a ShiftDisplay2 object, initialize the library using the interface pins, display properties and configurations.
+  Create a `ShiftDisplay2` object, initialize the library using the interface pins, display properties and configurations.
   A display can be set as a whole, or divided by sections. Sections can be a logical separation (for example hours and minutes on a 4 digit clock display), or a physical separation (for example timer and score on a scoreboard with multiple displays).
 
   `latchPin`, `clockPin`, `dataPin` (int): number of the Arduino digital pins connected to the latch, clock and data pins of the shift registers;
@@ -106,10 +97,10 @@ void loop() {
 
 * __set()__
 
-  * display.set(number[, decimalPlaces][, leadingZeros][, alignment])
-  * display.set(text[, alignment])
-  * display.set(customs)
-  * display.set(characters, dots)
+  * `display.set(number[, decimalPlaces][, leadingZeros][, alignment])`
+  * `display.set(text[, alignment])`
+  * `display.set(customs)`
+  * `display.set(characters, dots)`
 
   Encode and store a value for showing next on the display. The entire previous value is cleared.
 
@@ -147,7 +138,7 @@ void loop() {
 
 * __changeDot()__
 
-  * display.changeDot(index[, dot])
+  * `display.changeDot(index[, dot])`
 
   Modify the stored value by adding or hiding a dot.
 
@@ -161,7 +152,7 @@ void loop() {
 
 * __changeCharacter()__
 
-  * display.changeCharacter(index, custom)
+  * `display.changeCharacter(index, custom)`
 
   Modify the stored value by replacing the character (and dot) with a custom character.
 
@@ -174,10 +165,10 @@ void loop() {
 
 * __setAt()__
 
-  * display.setAt(section, number[, decimalPlaces][, leadingZeros][, alignment])
-  * display.setAt(section, text[, alignment])
-  * display.setAt(section, customs)
-  * display.setAt(section, characters, dots)
+  * `display.setAt(section, number[, decimalPlaces][, leadingZeros][, alignment])`
+  * `display.setAt(section, text[, alignment])`
+  * `display.setAt(section, customs)`
+  * `display.setAt(section, characters, dots)`
 
   Encode and store a value for showing next on the specified section. The section previous value is cleared.
 
@@ -218,7 +209,7 @@ void loop() {
 
 * __changeDotAt()__
 
-  * display.changeDotAt(section, index[, dot])
+  * `display.changeDotAt(section, index[, dot])`
 
   Modify the stored value by adding or hiding a dot in a section.
 
@@ -235,7 +226,7 @@ void loop() {
 
 * __changeCharacterAt()__
 
-  * display.changeCharacterAt(section, index, custom)
+  * `display.changeCharacterAt(section, index, custom)`
 
   Modify the stored value by replacing the character (and dot) with a custom character in a section.
 
@@ -251,7 +242,7 @@ void loop() {
 
 * __update()__
 
-  * display.update()
+  * `display.update()`
 
   Show on the display the stored value. For multiplexed drive, this must be called in a loop; for static drive, the value is shown until update()/clear()/show() is called.
 
@@ -259,7 +250,7 @@ void loop() {
 
 * __clear()__
 
-  * display.clear()
+  * `display.clear()`
 
   Hide the display content, without erasing stored value.
   
@@ -267,7 +258,7 @@ void loop() {
 
 * __show()__
 
-  * display.show(time)
+  * `display.show(time)`
 
   Show on the display the stored value, for the given time, then clear. Blocking function.
   
@@ -277,16 +268,9 @@ void loop() {
   exact time showing will be an under approximation.
 
 ### Types
-
 * DisplayType: `COMMON_ANODE`, `COMMON_CATHODE`
-
 * DisplayDrive: `MULTIPLEXED_DRIVE`, `STATIC_DRIVE`
-
 * Alignment: `ALIGN_LEFT`, `ALIGN_RIGHT`, `ALIGN_CENTER`
-
-
-## Notes
-* This library supports __Common Anode & Common Cathode__ seven segment displays
 
 ## TODO
 - [ ] Example for custom characters
@@ -294,9 +278,7 @@ void loop() {
 - [ ] Schematics for static drive
 - [ ] Remove display max size for static drive
 
-
 ## Contacts
-
 - https://github.com/ameer1234567890/ShiftDisplay2/
 - https://twitter.com/ameer1234567890
 - ameer1234567890@gmail.com
