@@ -1,11 +1,11 @@
 /*
-ShiftDisplay example
-by MiguelPynto
+ShiftDisplay2 example
+by Ameer Dawood
 Print strings from Serial Monitor (250000 baud) on display
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
-#include <ShiftDisplay.h>
+#include <ShiftDisplay2.h>
 
 const int LATCH_PIN = 6;
 const int CLOCK_PIN = 7;
@@ -13,7 +13,7 @@ const int DATA_PIN = 5;
 const DisplayType DISPLAY_TYPE = COMMON_ANODE; // COMMON_CATHODE or COMMON_ANODE
 const int DISPLAY_SIZE = 8; // number of digits on display
 
-ShiftDisplay display(LATCH_PIN, CLOCK_PIN, DATA_PIN, DISPLAY_TYPE, DISPLAY_SIZE);
+ShiftDisplay2 display(LATCH_PIN, CLOCK_PIN, DATA_PIN, DISPLAY_TYPE, DISPLAY_SIZE);
 
 void readSerial() {
 	char input[Serial.available() + 1]; // str len + NULL

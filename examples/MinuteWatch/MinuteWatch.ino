@@ -1,15 +1,15 @@
 /*
-ShiftDisplay example
-by MiguelPynto
+ShiftDisplay2 example
+by Ameer Dawood
 Count minutes passing by
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
-#include <ShiftDisplay.h>
+#include <ShiftDisplay2.h>
 
 // Arduino pin 6 connected to shift register latch, pin 7 to clock and pin 5 to data
 // common anode display with 2 digits
-ShiftDisplay display(6, 7, 5, COMMON_ANODE, 2);
+ShiftDisplay2 display(6, 7, 5, COMMON_ANODE, 2);
 
 void setup() {}
 

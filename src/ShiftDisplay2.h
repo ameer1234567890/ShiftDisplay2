@@ -1,13 +1,13 @@
 /*
-ShiftDisplay
-by MiguelPynto
+ShiftDisplay2
+by Ameer Dawood
 Arduino library for driving 7-segment displays using shift registers
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
-#ifndef ShiftDisplay_h
-#define ShiftDisplay_h
-#include "Arduino.h"
+#ifndef ShiftDisplay2_h
+#define ShiftDisplay2_h
+#include "Arduino2.h"
 
 enum DisplayType {
 	COMMON_ANODE,
@@ -38,7 +38,7 @@ const int DEFAULT_INDEXES[] = { 0, 1, 2, 3, 4, 5, 6, 7 };
 const int MAX_DISPLAY_SIZE = 8;
 const int POV = 1; // milliseconds showing each character when multiplexing
 
-class ShiftDisplay {
+class ShiftDisplay2 {
 
 	// MD: for multiplexed drive displays
 	// SD: for static drive displays
@@ -88,14 +88,14 @@ class ShiftDisplay {
 	public:
 
 		// constructors
-		ShiftDisplay(DisplayType displayType, int displaySize, DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, whole display, default pins
-		ShiftDisplay(int latchPin, int clockPin, int dataPin, DisplayType displayType, int displaySize, DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, whole display, custom pins
-		ShiftDisplay(DisplayType displayType, const int sectionSizes[], DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, sectioned display, default pins
-		ShiftDisplay(int latchPin, int clockPin, int dataPin, DisplayType displayType, const int sectionSizes[], DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, sectioned display, custom pins
-		ShiftDisplay(DisplayType displayType, int displaySize, bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, whole display, default pins
-		ShiftDisplay(int latchPin, int clockPin, int dataPin, DisplayType displayType, int displaySize, bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, whole display, custom pins
-		ShiftDisplay(DisplayType displayType, const int sectionSizes[], bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, sectioned display, default pins
-		ShiftDisplay(int latchPin, int clockPin, int dataPin, DisplayType displayType, const int sectionSizes[], bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, sectioned display, custom pins
+		ShiftDisplay2(DisplayType displayType, int displaySize, DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, whole display, default pins
+		ShiftDisplay2(int latchPin, int clockPin, int dataPin, DisplayType displayType, int displaySize, DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, whole display, custom pins
+		ShiftDisplay2(DisplayType displayType, const int sectionSizes[], DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, sectioned display, default pins
+		ShiftDisplay2(int latchPin, int clockPin, int dataPin, DisplayType displayType, const int sectionSizes[], DisplayDrive displayDrive = DEFAULT_DRIVE); // default connections, sectioned display, custom pins
+		ShiftDisplay2(DisplayType displayType, int displaySize, bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, whole display, default pins
+		ShiftDisplay2(int latchPin, int clockPin, int dataPin, DisplayType displayType, int displaySize, bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, whole display, custom pins
+		ShiftDisplay2(DisplayType displayType, const int sectionSizes[], bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, sectioned display, default pins
+		ShiftDisplay2(int latchPin, int clockPin, int dataPin, DisplayType displayType, const int sectionSizes[], bool swappedShiftRegisters, const int indexes[] = DEFAULT_INDEXES); // custom connections, sectioned display, custom pins
 
 		// cache value
 		void set(int number, int decimalPlaces = DEFAULT_DECIMAL_PLACES_INTEGER, bool leadingZeros = DEFAULT_LEADING_ZEROS, Alignment alignment = DEFAULT_ALIGN_NUMBER);
@@ -170,8 +170,8 @@ class ShiftDisplay {
 		void show(const String &value, unsigned long time, Alignment alignment = DEFAULT_ALIGN_TEXT); // deprecated by set() show()
 		void show(const byte customs[], unsigned long time); // deprecated by set() show()
 		void show(const char characters[], const bool dots[], unsigned long time); // deprecated by set() show()
-		ShiftDisplay(DisplayType displayType, int sectionCount, const int sectionSizes[]);
-		ShiftDisplay(int latchPin, int clockPin, int dataPin, DisplayType displayType, int sectionCount, const int sectionSizes[]);
+		ShiftDisplay2(DisplayType displayType, int sectionCount, const int sectionSizes[]);
+		ShiftDisplay2(int latchPin, int clockPin, int dataPin, DisplayType displayType, int sectionCount, const int sectionSizes[]);
 		void setDot(int index, bool dot); // deprecated by changeDot()
 		void setDotAt(int section, int relativeIndex, bool dot); // deprecated by changeDotAt()
 		void setCustom(int index, byte custom);

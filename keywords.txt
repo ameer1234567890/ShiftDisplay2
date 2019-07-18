@@ -1,4 +1,4 @@
-ShiftDisplay	KEYWORD1
+ShiftDisplay2	KEYWORD1
 
 set	KEYWORD2
 changeDot	KEYWORD2

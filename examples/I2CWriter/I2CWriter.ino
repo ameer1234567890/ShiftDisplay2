@@ -1,8 +1,8 @@
 /*
-ShiftDisplay example
-by MiguelPynto
+ShiftDisplay2 example
+by Ameer Dawood
 Send pre-formatted data over I2C
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
 #include <Wire.h>

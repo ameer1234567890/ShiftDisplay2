@@ -1,11 +1,11 @@
 /*
-ShiftDisplay example
-by MiguelPynto
+ShiftDisplay2 example
+by Ameer Dawood
 One minute clock timer, pausable with button
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
-#include <ShiftDisplay.h>
+#include <ShiftDisplay2.h>
 
 const DisplayType DISPLAY_TYPE = COMMON_CATHODE; // COMMON_CATHODE or COMMON_ANODE
 const int DISPLAY_SIZE = 3; // number of digits on display
@@ -13,7 +13,7 @@ const int BUTTON_PIN = 2; // connect one end of button to pin 2 and other to gro
 
 volatile bool buttonPressed;
 
-ShiftDisplay display(DISPLAY_TYPE, DISPLAY_SIZE);
+ShiftDisplay2 display(DISPLAY_TYPE, DISPLAY_SIZE);
 
 void debounce() {
 	display.show(100); // execution will delay for 100ms

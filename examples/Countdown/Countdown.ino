@@ -1,13 +1,13 @@
 /*
-ShiftDisplay example
-by MiguelPynto
+ShiftDisplay2 example
+by Ameer Dawood
 Race countdown: 3.. 2.. 1.. GO!
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
-#include <ShiftDisplay.h>
+#include <ShiftDisplay2.h>
 
-ShiftDisplay display(COMMON_CATHODE, 3);
+ShiftDisplay2 display(COMMON_CATHODE, 3);
 
 void setup() {
 	for (int i = 3; i > 0; i--) {

@@ -1,11 +1,11 @@
 /*
-ShiftDisplay example
-by MiguelPynto
+ShiftDisplay2 example
+by Ameer Dawood
 Car dashboard with 3 sections
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
-#include <ShiftDisplay.h>
+#include <ShiftDisplay2.h>
 
 enum sections { // in order of connection
 	SPEEDOMETER,
@@ -15,7 +15,7 @@ enum sections { // in order of connection
 const int SECTION_SIZES[] = {3, 4, 1, 0};
 const int RESERVE = 0; // digit index relative to FUEL_GAUGE
 
-ShiftDisplay dashboard(COMMON_CATHODE, SECTION_SIZES);
+ShiftDisplay2 dashboard(COMMON_CATHODE, SECTION_SIZES);
 
 int getSpeed() {
 	return 120;

@@ -1,8 +1,8 @@
 /*
-ShiftDisplay
-by MiguelPynto
+ShiftDisplay2
+by Ameer Dawood
 Arduino library for driving 7-segment displays using shift registers
-https://miguelpynto.github.io/ShiftDisplay/
+https://ameer.io/ShiftDisplay2/
 */
 
 #ifndef CharacterEncoding_h
