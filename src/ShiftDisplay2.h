@@ -7,7 +7,7 @@ https://ameer.io/ShiftDisplay2/
 
 #ifndef ShiftDisplay2_h
 #define ShiftDisplay2_h
-#include "Arduino2.h"
+#include "Arduino.h"
 
 enum DisplayType {
 	COMMON_ANODE,
