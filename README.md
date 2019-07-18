@@ -136,6 +136,18 @@ void loop() {
   `alignment` (Alignment): alignment of the value on the display;
   if is not specified, the default is `ALIGN_RIGHT` for numbers and `ALIGN_LEFT` for text.
 
+* __scroll()__
+
+  * `display.scroll(text[, speed])`
+
+  Scroll a string of text on the display. The entire previous value is cleared and this function automatically
+  calls `show()`.
+
+  `text` (String \| char[]): text to be scrolled on the display.
+
+  `speed` (int): scrolling speed. This is essentially the number of miliseconds that each combination of letters are
+  displayed. Thus, the speed increases as the value is decreased. ie; speed of 300 is faster than speed of 1000.
+
 * __changeDot()__
 
   * `display.changeDot(index[, dot])`

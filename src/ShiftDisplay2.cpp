@@ -539,6 +539,52 @@ void ShiftDisplay2::show(unsigned long time) {
 	}
 }
 
+void ShiftDisplay2::scroll(String &value, uint speed) {
+	String _value = String(value);
+	int _endChar = _displaySize;
+	if (_value.length() > _displaySize) {
+		for (int i = 0; i < _value.length(); i++) {
+			set(_value.substring(i, _endChar));
+			show(speed);
+			_endChar = _endChar + 1;
+		}
+	} else {
+		set(_value);
+		show(speed * _displaySize);
+	}
+}
+
+void ShiftDisplay2::scroll(const char value[], uint speed) {
+	String _value = String(value);
+	int _endChar = _displaySize;
+	if (_value.length() > _displaySize) {
+		for (int i = 0; i < _value.length(); i++) {
+			set(_value.substring(i, _endChar));
+			show(speed);
+			_endChar = _endChar + 1;
+		}
+	} else {
+		set(_value);
+		show(speed * _displaySize);
+	}
+}
+
+void ShiftDisplay2::scroll(char value, uint speed) {
+	String _value = String(value);
+	int _endChar = _displaySize;
+	if (_value.length() > _displaySize) {
+		for (int i = 0; i < _value.length(); i++) {
+			set(_value.substring(i, _endChar));
+			show(speed);
+			_endChar = _endChar + 1;
+		}
+	} else {
+		set(_value);
+		show(speed * _displaySize);
+	}
+}
+
+
 // DEPRECATED ******************************************************************
 void ShiftDisplay2::insertPoint(int index) { modifyCacheDot(index, true); }
 void ShiftDisplay2::removePoint(int index) { modifyCacheDot(index, false); }
