@@ -5,6 +5,7 @@ _by Ameer Dawood_
 
 The original [ShiftDisplay](https://github.com/MiguelPynto/ShiftDisplay) library was developed by Miguel Pynto.
 This is an enhanced fork by Ameer Dawood
+
 Arduino library for driving 7-segment displays using shift registers
 
 - Show numbers, text, and custom characters
