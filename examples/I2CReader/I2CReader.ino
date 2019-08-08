@@ -9,6 +9,10 @@ https://ameer.io/ShiftDisplay2/
 #include <Wire.h>
 // connect pin A4 to other Arduino pin A4, pin A5 to other Arduino pin A5, and GND to other Arduino GND
 
+#ifdef ESP32
+bool isEsp32 = true;
+#endif
+
 const int DISPLAY_ADDRESS = 8;
 const int LATCH_PIN = 6;
 const int CLOCK_PIN = 7;
@@ -26,8 +30,12 @@ void receiveEvent(int numBytes) {
 }
 
 void setup() {
-	Wire.begin(DISPLAY_ADDRESS); // this is slave
-	Wire.onReceive(receiveEvent);
+	if (isEsp32) {
+		display.set("XWRK"); // i2c slave mode does not work in ESP32, yet. Refer: https://github.com/espressif/arduino-esp32/issues/118
+	} else {
+		Wire.begin(DISPLAY_ADDRESS); // this is slave
+		Wire.onReceive(receiveEvent);
+	}
 }
 
 void loop() {
