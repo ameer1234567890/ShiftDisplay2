@@ -14,7 +14,8 @@ before_install:
   - arduino-cli core update-index
   - arduino-cli core install arduino:avr
   - arduino-cli core install esp8266:esp8266
-  - buildExampleSketchEsp8266() { arduino-cli compile --warnings all --fqbn esp8266:esp8266:generic $PWD/examples/$1; }
+  - buildExampleSketchEsp8266() { arduino-cli compile --fqbn esp8266:esp8266:generic $PWD/examples/$1; }
+  - buildExampleSketchUno() { arduino-cli compile --fqbn arduino:avr:uno $PWD/examples/$1; }
 install:
   - mkdir -p $HOME/Arduino/libraries
   - ln -s $PWD $HOME/Arduino/libraries/.
@@ -27,3 +28,11 @@ script:
   - buildExampleSketchEsp8266 "SerialMonitor"
   - buildExampleSketchEsp8266 "Timer"
   - buildExampleSketchEsp8266 "Weather"
+  - buildExampleSketchUno "Countdown"
+  - buildExampleSketchUno "I2CReader"
+  - buildExampleSketchUno "I2CWriter"
+  - buildExampleSketchUno "MinuteWatch"
+  - buildExampleSketchUno "SectionedDashboard"
+  - buildExampleSketchUno "SerialMonitor"
+  - buildExampleSketchUno "Timer"
+  - buildExampleSketchUno "Weather"
