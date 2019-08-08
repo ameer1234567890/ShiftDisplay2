@@ -10,7 +10,9 @@ https://ameer.io/ShiftDisplay2/
 // connect pin A4 to other Arduino pin A4, pin A5 to other Arduino pin A5, and GND to other Arduino GND
 
 #ifdef ESP32
-bool isEsp32 = true;
+	bool isEsp32 = true;
+#else
+	bool isEsp32 = false;
 #endif
 
 const int DISPLAY_ADDRESS = 8;
