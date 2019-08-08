@@ -39,7 +39,7 @@ script:
   - buildExampleSketchUno "Timer"
   - buildExampleSketchUno "Weather"
   - buildExampleSketchEsp32 "Countdown"
-  - buildExampleSketchEsp32 "I2CReader"
+  # - buildExampleSketchEsp32 "I2CReader" # i2c slave mode does not work on ESP32 yet. Refer: https://github.com/espressif/arduino-esp32/issues/118
   - buildExampleSketchEsp32 "I2CWriter"
   - buildExampleSketchEsp32 "MinuteWatch"
   - buildExampleSketchEsp32 "SectionedDashboard"
