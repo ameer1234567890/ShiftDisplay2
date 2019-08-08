@@ -1,4 +1,5 @@
 [![arduino-library-badge](https://www.ardu-badge.com/badge/ShiftDisplay2.svg?)](https://www.ardu-badge.com/ShiftDisplay2)
+[![Build Status](https://travis-ci.org/ameer1234567890/ShiftDisplay2.svg?branch=master)](https://travis-ci.org/ameer1234567890/ShiftDisplay2)
 
 https://ameer.io/ShiftDisplay2/
 

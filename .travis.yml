@@ -1,0 +1,29 @@
+language: generic
+env:
+  global:
+    - CLI_VERSION=latest
+before_install:
+  - wget http://downloads.arduino.cc/arduino-cli/arduino-cli-$CLI_VERSION-linux64.tar.bz2
+  - tar xf arduino-cli-$CLI_VERSION-linux64.tar.bz2
+  - mv arduino-cli $HOME/bin/arduino-cli
+  - mkdir -p $HOME/bin
+  - arduino-cli config init
+  - mv $PWD/travis/.cli-config.yml $HOME/.arduino15/arduino-cli.yaml
+  - arduino-cli config dump
+  - export PATH=$PATH:$HOME/bin
+  - arduino-cli core update-index
+  - arduino-cli core install arduino:avr
+  - arduino-cli core install esp8266:esp8266
+  - buildExampleSketchEsp8266() { arduino-cli compile --warnings all --fqbn esp8266:esp8266:generic $PWD/examples/$1; }
+install:
+  - mkdir -p $HOME/Arduino/libraries
+  - ln -s $PWD $HOME/Arduino/libraries/.
+script:
+  - buildExampleSketchEsp8266 "Countdown"
+  - buildExampleSketchEsp8266 "I2CReader"
+  - buildExampleSketchEsp8266 "I2CWriter"
+  - buildExampleSketchEsp8266 "MinuteWatch"
+  - buildExampleSketchEsp8266 "SectionedDashboard"
+  - buildExampleSketchEsp8266 "SerialMonitor"
+  - buildExampleSketchEsp8266 "Timer"
+  - buildExampleSketchEsp8266 "Weather"
