@@ -1,3 +1,5 @@
+![badge](https://www.ardu-badge.com/badge/ShiftDisplay2.svg)
+
 https://ameer.io/ShiftDisplay2/
 
 # ShiftDisplay2
