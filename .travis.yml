@@ -14,6 +14,7 @@ before_install:
   - arduino-cli core update-index
   - arduino-cli core install arduino:avr
   - arduino-cli core install esp8266:esp8266
+  - arduino-cli core install esp32:esp32
   - buildExampleSketchEsp8266() { arduino-cli compile --fqbn esp8266:esp8266:generic $PWD/examples/$1; }
   - buildExampleSketchEsp32() { arduino-cli compile --fqbn esp32:esp32:esp32 $PWD/examples/$1; }
   - buildExampleSketchUno() { arduino-cli compile --fqbn arduino:avr:uno $PWD/examples/$1; }
