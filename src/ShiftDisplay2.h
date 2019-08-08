@@ -132,9 +132,9 @@ class ShiftDisplay2 {
 		void setAt(int section, const String &value, Alignment alignment = DEFAULT_ALIGN_TEXT); // Arduino string object
 		void setAt(int section, const byte customs[]); // custom characters (encoded in abcdefgp format), array length must match defined section size
 		void setAt(int section, const char characters[], const bool dots[]); // arrays length must match defined section size
-		void scroll(String &value, uint speed = 300); // scrolling text
-		void scroll(const char value[], uint speed = 300); // scrolling text
-		void scroll(char value, uint speed = 300); // scrolling text
+		void scroll(String &value, int speed = 300); // scrolling text
+		void scroll(const char value[], int speed = 300); // scrolling text
+		void scroll(char value, int speed = 300); // scrolling text
 
 		// modify cached value at index
 		void changeDot(int index, bool dot = DEFAULT_CHANGE_DOT); // show or hide a dot on character

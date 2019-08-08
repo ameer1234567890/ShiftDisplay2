@@ -539,15 +539,15 @@ void ShiftDisplay2::show(unsigned long time) {
 	}
 }
 
-void ShiftDisplay2::scroll(String &value, uint speed) {
+void ShiftDisplay2::scroll(String &value, int speed) {
 	scroll(value, speed);
 }
 
-void ShiftDisplay2::scroll(const char value[], uint speed) {
+void ShiftDisplay2::scroll(const char value[], int speed) {
 	scroll(value, speed);
 }
 
-void ShiftDisplay2::scroll(char value, uint speed) {
+void ShiftDisplay2::scroll(char value, int speed) {
 	String _value = String(value);
 	int _endChar = _displaySize;
 	if (_value.length() > _displaySize) {
