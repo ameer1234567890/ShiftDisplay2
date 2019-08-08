@@ -1,4 +1,4 @@
-![badge](https://www.ardu-badge.com/badge/ShiftDisplay2.svg)
+[![arduino-library-badge](https://www.ardu-badge.com/badge/ShiftDisplay2.svg?)](https://www.ardu-badge.com/ShiftDisplay2)
 
 https://ameer.io/ShiftDisplay2/
 
