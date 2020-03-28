@@ -293,6 +293,7 @@ void loop() {
 - [ ] Example for static drive
 - [ ] Schematics for static drive
 - [ ] Remove display max size for static drive
+- [ ] Implement deprecation warnings
 
 ## Contacts
 - https://github.com/ameer1234567890/ShiftDisplay2/
